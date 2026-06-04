@@ -1,557 +1,349 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LuMa Brauerei | Aarauer Craft Beer</title>
-  <meta name="description" content="LuMa Brauerei aus Aarau. Craft Beer, Kegs für Feste, Helles, Brown Ale, Cold IPA, Hazy IPA und Spezialbiere auf Anfrage." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuMa Brauerei – Aarauer Craft Bier</title>
 
-  <style>
-    :root {
-      --bg: #0f1115;
-      --bg-soft: #171a21;
-      --card: #1f232d;
-      --text: #f4f4f4;
-      --muted: #b6bbc6;
-      --green: #8dff78;
-      --yellow: #ffd34e;
-      --pink: #ff4fa3;
-      --border: rgba(255,255,255,0.12);
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0f1115;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+        header {
+            background: linear-gradient(135deg, #1b1e25, #0f1115);
+            padding: 60px 0;
+        }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(15, 17, 21, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
 
-    .nav {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-    }
+        .hero h1 span {
+            color: #d8b35b;
+        }
 
-    .brand {
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      font-size: 1.1rem;
-    }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
 
-    .brand span {
-      color: var(--green);
-    }
+        .logo-card {
+            background: #1b1e25;
+            border-radius: 20px;
+            padding: 20px;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
+        .logo-card img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
 
-    .nav-links a:hover {
-      color: var(--green);
-    }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #d8b35b;
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
 
-    .hero {
-      min-height: 86vh;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(circle at top left, rgba(141,255,120,0.16), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(255,79,163,0.12), transparent 32%),
-        linear-gradient(135deg, #0f1115, #171a21);
-    }
+        section {
+            padding: 80px 0;
+        }
 
-    .hero-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 80px 24px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 56px;
-      align-items: center;
-    }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #d8b35b;
+        }
 
-    .eyebrow {
-      display: inline-block;
-      color: var(--green);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.78rem;
-      margin-bottom: 18px;
-    }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 20px;
+        }
 
-    h1 {
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      margin-bottom: 24px;
-    }
+        .card {
+            background: #1b1e25;
+            padding: 25px;
+            border-radius: 12px;
+        }
 
-    h1 span {
-      color: var(--green);
-    }
+        .card h3 {
+            margin-bottom: 10px;
+        }
 
-    .hero p {
-      font-size: 1.25rem;
-      color: var(--muted);
-      max-width: 640px;
-      margin-bottom: 32px;
-    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 15px;
+        }
 
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+        }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 20px;
-      border-radius: 999px;
-      font-weight: 800;
-      border: 1px solid var(--border);
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
+        footer {
+            background: #090a0d;
+            text-align: center;
+            padding: 40px 20px;
+            color: #aaa;
+        }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+        a {
+            color: #d8b35b;
+        }
 
-    .btn-primary {
-      background: var(--green);
-      color: #081008;
-      border-color: var(--green);
-    }
+        @media(max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--text);
-    }
-
-    .logo-card {
-      background: linear-gradient(145deg, rgba(141,255,120,0.2), rgba(255,79,163,0.12));
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.35);
-    }
-
-    .logo-placeholder {
-      aspect-ratio: 1 / 1;
-      border-radius: 22px;
-      background:
-        linear-gradient(135deg, rgba(141,255,120,0.9), rgba(255,211,78,0.72)),
-        #8dff78;
-      color: #101010;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: 900;
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      line-height: 0.95;
-      padding: 24px;
-      text-transform: uppercase;
-      box-shadow: inset 0 0 0 10px rgba(255,255,255,0.2);
-    }
-
-    section {
-      padding: 88px 24px;
-    }
-
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.05;
-      margin-bottom: 18px;
-      letter-spacing: -0.04em;
-    }
-
-    .section-lead {
-      color: var(--muted);
-      font-size: 1.1rem;
-      max-width: 760px;
-      margin-bottom: 36px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 22px;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 28px;
-    }
-
-    .card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: var(--muted);
-    }
-
-    .beer-card {
-      min-height: 180px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .beer-tag {
-      display: inline-block;
-      width: fit-content;
-      margin-top: 18px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(141,255,120,0.12);
-      color: var(--green);
-      font-size: 0.85rem;
-      font-weight: 800;
-    }
-
-    .highlight {
-      background:
-        linear-gradient(135deg, rgba(141,255,120,0.14), rgba(255,79,163,0.12)),
-        var(--bg-soft);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .steps {
-      counter-reset: step;
-    }
-
-    .step {
-      position: relative;
-      padding-left: 54px;
-    }
-
-    .step::before {
-      counter-increment: step;
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--green);
-      color: #081008;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .award {
-      border-left: 5px solid var(--yellow);
-    }
-
-    .contact-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 14px;
-      color: var(--muted);
-    }
-
-    .contact-list strong {
-      color: var(--text);
-    }
-
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 24px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    footer .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 860px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .hero-inner,
-      .grid-2,
-      .grid-3,
-      .contact-box {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 64px 20px;
-      }
-
-      .hero-inner {
-        padding: 64px 20px;
-      }
-    }
-  </style>
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <nav class="nav">
-      <a class="brand" href="#top">Lu<span>Ma</span> Brauerei</a>
-      <div class="nav-links">
-        <a href="#biere">Biere</a>
-        <a href="#feste">Bier für Feste</a>
-        <a href="#ueber-uns">Über uns</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
-    </nav>
-  </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <span class="eyebrow">Aarauer Craft Beer</span>
-          <h1>LuMa<br><span>Brauerei</span></h1>
-          <p>
-            Kleine unabhängige Brauerei aus Aarau. Wir brauen Helles, Brown Ale,
-            Cold IPA, Hazy IPA und weitere Bierstile auf Anfrage.
-          </p>
-          <div class="buttons">
-            <a class="btn btn-primary" href="#feste">Bier für Feste anfragen</a>
-            <a class="btn btn-secondary" href="#biere">Unsere Biere</a>
-          </div>
-        </div>
-
-        <div class="logo-card">
-          <div class="logo-placeholder">
-            LuMa<br>Brauerei
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ueber-uns">
-      <div class="container">
-        <h2 class="section-title">Von Lukas und Manuel. Daher LuMa.</h2>
-        <p class="section-lead">
-          Die LuMa Brauerei gibt es offiziell seit 2025. Gebraut wird aber schon seit rund
-          8 Jahren: mit viel Neugier, sauberer Technik und dem Anspruch, Bier zu machen,
-          das nicht beliebig schmeckt.
-        </p>
-
-        <div class="grid grid-3">
-          <div class="card">
-            <h3>Kleine Chargen</h3>
-            <p>Wir brauen bewusst in überschaubaren Mengen. Dadurch bleiben die Biere frisch, flexibel und charaktervoll.</p>
-          </div>
-          <div class="card">
-            <h3>Craft statt Standard</h3>
-            <p>Unser Sortiment deckt klassische, moderne und experimentelle Bierstile ab.</p>
-          </div>
-          <div class="card">
-            <h3>Aus Aarau</h3>
-            <p>Standort der Brauerei: Hauptstrasse 102, 5032 Aarau.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="biere" class="highlight">
-      <div class="container">
-        <h2 class="section-title">Unsere Biere</h2>
-        <p class="section-lead">
-          Unser Standardangebot besteht aus Hellem, Brown Ale, Cold IPA und Hazy IPA.
-          Weitere Bierstile brauen wir auf Anfrage.
-        </p>
-
-        <div class="grid grid-2">
-          <div class="card beer-card">
-            <div>
-              <h3>Helles</h3>
-              <p>Ausgewogen, süffig und sauber gebraut. Der unkomplizierte Klassiker für fast jeden Anlass.</p>
-            </div>
-            <span class="beer-tag">Klassisch</span>
-          </div>
-
-          <div class="card beer-card">
-            <div>
-              <h3>Brown Ale</h3>
-              <p>Malziger, runder Charakter mit Karamellnoten und angenehmer Trinkbarkeit.</p>
-            </div>
-            <span class="beer-tag">Malzig</span>
-          </div>
-
-          <div class="card beer-card">
-            <div>
-              <h3>Cold IPA</h3>
-              <p>Hopfenbetont, klar und trocken. IPA-Charakter mit besonders schlankem Finish.</p>
-            </div>
-            <span class="beer-tag">Hopfig</span>
-          </div>
-
-          <div class="card beer-card">
-            <div>
-              <h3>Hazy IPA</h3>
-              <p>Fruchtig, weich und aromatisch. Für alle, die Hopfen lieber saftig als bitter mögen.</p>
-            </div>
-            <span class="beer-tag">Fruchtig</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="feste">
-      <div class="container">
-        <h2 class="section-title">Bier für Feste</h2>
-        <p class="section-lead">
-          Für Geburtstage, Vereinsanlässe, Firmenfeste oder private Feiern bieten wir Bier in Kegs an.
-          Auf Wunsch stellen wir Durchlaufkühler, CO₂-Flasche und das nötige Zubehör zur Verfügung.
-        </p>
-
-        <div class="grid grid-3 steps">
-          <div class="card step">
-            <h3>Anlass anfragen</h3>
-            <p>Datum, Personenzahl und gewünschter Bierstil reichen für eine erste Einschätzung.</p>
-          </div>
-          <div class="card step">
-            <h3>Bier auswählen</h3>
-            <p>Standardangebot oder Spezialbier auf Anfrage, abhängig von Vorlaufzeit und Menge.</p>
-          </div>
-          <div class="card step">
-            <h3>Ausschank vorbereiten</h3>
-            <p>Kegs, Durchlaufkühler und CO₂-Flasche können passend zum Anlass bereitgestellt werden.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="highlight">
-      <div class="container">
-        <h2 class="section-title">Auszeichnungen</h2>
-        <div class="card award">
-          <h3>1. Platz am Brau & Rauchshop Bier Contest</h3>
-          <p>
-            Mit unserem Double IPA konnten wir beim Brau & Rauchshop Bier Contest den 1. Platz gewinnen.
-            Weitere Platzierungen folgten unter anderem mit Witbier.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt">
-      <div class="container">
-        <h2 class="section-title">Kontakt</h2>
-        <p class="section-lead">
-          Für Keg-Anfragen, Spezialbiere oder allgemeine Fragen zur LuMa Brauerei.
-        </p>
-
-        <div class="contact-box">
-          <div class="card">
-            <h3>Anfragen</h3>
-            <div class="contact-list">
-              <p><strong>E-Mail:</strong> info@luma-brauerei.ch</p>
-              <p><strong>Telefon:</strong> 079 774 61 94</p>
-              <p><strong>Adresse:</strong> Hauptstrasse 102, 5032 Aarau</p>
-            </div>
-
-            <div class="socials">
-              <a class="btn btn-primary" href="https://www.instagram.com/luma_brauerei/" target="_blank" rel="noopener">Instagram</a>
-              <a class="btn btn-secondary" href="https://untappd.com/w/luma-brauerei/602341/beer" target="_blank" rel="noopener">Untappd</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Keg-Anfrage vorbereiten</h3>
-            <p>
-              Schreib uns am besten direkt folgende Angaben:
-            </p>
-            <br>
-            <p>
-              Datum des Anlasses, Ort, ungefähre Personenzahl, gewünschter Bierstil,
-              Bedarf an Durchlaufkühler und CO₂-Flasche sowie deine Kontaktdaten.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
+<header>
     <div class="container">
-      <p>© 2025 LuMa Brauerei</p>
-      <p>Hauptstrasse 102, 5032 Aarau · info@luma-brauerei.ch</p>
+        <div class="hero">
+
+            <div>
+                <h1>LuMa <span>Brauerei</span></h1>
+
+                <p>
+                    Kleine unabhängige Craft-Brauerei aus Aarau.
+                    Handwerklich gebraute Biere mit Leidenschaft,
+                    Neugier und dem Anspruch, dass jedes Bier Charakter hat.
+                </p>
+
+                <a href="#feste" class="btn">Bier für Feste</a>
+                <a href="#kontakt" class="btn">Kontakt</a>
+            </div>
+
+            <div class="logo-card">
+                <img src="Logo.png" alt="LuMa Brauerei Logo">
+            </div>
+
+        </div>
     </div>
-  </footer>
+</header>
+
+<section id="ueber-uns">
+    <div class="container">
+
+        <h2>Von Lukas und Manuel. Daher LuMa.</h2>
+
+        <p>
+            Die LuMa Brauerei wurde offiziell 2025 gegründet.
+            Gebraut wird jedoch bereits seit über 8 Jahren von Lukas und Manuel.
+        </p>
+
+        <br>
+
+        <p>
+            Was als Hobby begann, entwickelte sich über die Jahre zu einer
+            Leidenschaft für hochwertige Craft-Biere.
+            Heute entstehen bei uns klassische Bierstile ebenso wie kreative
+            Spezialsude auf Anfrage.
+        </p>
+
+    </div>
+</section>
+
+<section id="biere">
+    <div class="container">
+
+        <h2>Unsere Standardbiere</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Helles</h3>
+                <p>Erfrischend, süffig und unkompliziert.</p>
+            </div>
+
+            <div class="card">
+                <h3>Brown Ale</h3>
+                <p>Malzig, ausgewogen und angenehm vollmundig.</p>
+            </div>
+
+            <div class="card">
+                <h3>Cold IPA</h3>
+                <p>Trocken, hopfig und modern.</p>
+            </div>
+
+            <div class="card">
+                <h3>Hazy IPA</h3>
+                <p>Fruchtig, weich und intensiv aromatisch.</p>
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <p>
+            Zusätzlich brauen wir weitere Bierstile gerne auf Anfrage.
+        </p>
+
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2>Auszeichnungen</h2>
+
+        <p>
+            Beim Bier-Contest von Brau- und Rauchshop konnten wir bereits
+            einen 1. Platz mit unserem Double IPA erreichen.
+            Weitere Platzierungen wurden unter anderem mit einem Witbier erzielt.
+        </p>
+
+    </div>
+</section>
+
+<section id="feste">
+    <div class="container">
+
+        <h2>Bier für Feste</h2>
+
+        <p>
+            Für Vereinsanlässe, Geburtstage, Firmenfeste oder private Feiern
+            vermieten wir Bierfässer inklusive passender Ausschankanlage.
+        </p>
+
+        <br>
+
+        <p>
+            Auf Wunsch stellen wir:
+        </p>
+
+        <ul style="margin-left:25px; margin-top:10px;">
+            <li>Bierfässer (Kegs)</li>
+            <li>Durchlaufkühler</li>
+            <li>CO₂-Flasche</li>
+            <li>Beratung zur benötigten Biermenge</li>
+        </ul>
+
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2>Einblicke in die Brauerei</h2>
+
+        <p>
+            Weitere Bilder und aktuelle Brautage finden Sie auf Instagram.
+        </p>
+
+        <br>
+
+        <div class="gallery">
+
+            <div class="card">
+                <h3>Malz</h3>
+                <p>Die Grundlage jedes Bieres.</p>
+            </div>
+
+            <div class="card">
+                <h3>Maischen</h3>
+                <p>Der Beginn der Bierherstellung.</p>
+            </div>
+
+            <div class="card">
+                <h3>Sudhaus</h3>
+                <p>Hier entsteht der Sud.</p>
+            </div>
+
+            <div class="card">
+                <h3>Craft-Brauanlage</h3>
+                <p>Unsere Technik für kleine Chargen.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="kontakt">
+    <div class="container">
+
+        <h2>Kontakt</h2>
+
+        <p>
+            LuMa Brauerei<br>
+            Hauptstrasse 102<br>
+            5032 Aarau
+        </p>
+
+        <br>
+
+        <p>
+            Telefon: 079 774 61 94
+        </p>
+
+        <br>
+
+        <p>
+            E-Mail: info@luma-brauerei.ch
+        </p>
+
+        <br>
+
+        <p>
+            Instagram:
+            <a href="https://www.instagram.com/luma_brauerei/" target="_blank">
+                @luma_brauerei
+            </a>
+        </p>
+
+        <p>
+            Untappd:
+            <a href="https://untappd.com/w/luma-brauerei/602341/beer" target="_blank">
+                LuMa Brauerei
+            </a>
+        </p>
+
+    </div>
+</section>
+
+<footer>
+    © 2025 LuMa Brauerei · Aarau · Handwerklich gebrautes Bier
+</footer>
+
 </body>
 </html>
