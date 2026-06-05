@@ -79,19 +79,31 @@ a {
 
 .social-links {
     display: flex;
-    gap: 8px;
+    align-items: center;
+    gap: 10px;
 }
 
 .social-links a {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 999px;
     border: 1px solid var(--border);
     display: grid;
     place-items: center;
-    font-size: 0.72rem;
-    font-weight: 900;
-    color: var(--green);
+    background: rgba(255, 255, 255, 0.04);
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    background: rgba(141, 255, 120, 0.12);
+}
+
+.social-links img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    object-fit: contain;
 }
 
 .menu-toggle {
