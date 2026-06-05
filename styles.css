@@ -93,7 +93,32 @@ a {
     background: rgba(255, 255, 255, 0.04);
     transition: transform 0.15s ease, background 0.15s ease;
 }
+.instagram-link {
+    background: linear-gradient(
+        45deg,
+        #F58529,
+        #DD2A7B,
+        #8134AF,
+        #515BD4
+    ) !important;
+    border: none !important;
+}
 
+.untappd-link {
+    background: #FFC000 !important;
+    border: none !important;
+}
+
+.social-links img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.instagram-link:hover,
+.untappd-link:hover {
+    transform: scale(1.1);
+}
 .social-links a:hover {
     transform: translateY(-2px);
     background: rgba(141, 255, 120, 0.12);
