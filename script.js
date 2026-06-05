@@ -4,7 +4,7 @@ const beers = [
     {
         name: "Helles",
         style: "Klassisch",
-        image: "beer-helles.jpg",
+        image: "beer-helles.png",
         description: "Süffig, klar und ausgewogen. Ein unkompliziertes Bier für fast jeden Anlass.",
         hops: "Hallertauer Mittelfrüh, Tettnanger",
         malts: "Pilsner Malz, Wiener Malz",
@@ -14,7 +14,7 @@ const beers = [
     {
         name: "Brown Ale",
         style: "Malzig",
-        image: "beer-brown-ale.jpg",
+        image: "beer-brown-ale.png",
         description: "Rund, malzig und leicht karamellig. Vollmundig, aber nicht schwer.",
         hops: "East Kent Goldings, Fuggle",
         malts: "Pale Ale, Münchner, Crystal, Chocolate",
@@ -24,7 +24,7 @@ const beers = [
     {
         name: "Cold IPA",
         style: "Modern",
-        image: "beer-cold-ipa.jpg",
+        image: "beer-cold-ipa.png",
         description: "Trocken, schlank und hopfenbetont. IPA-Aroma mit besonders klarem Finish.",
         hops: "Citra, Mosaic, Simcoe",
         malts: "Pilsner Malz, Reisflocken",
@@ -32,7 +32,7 @@ const beers = [
         abv: "ca. 6.2 %"
     },
     {
-        name: "Hazy IPA",
+        name: "Hazy png",
         style: "Fruchtig",
         image: "beer-hazy-ipa.jpg",
         description: "Saftig, weich und aromatisch. Viel Hopfenaroma, weniger kantige Bittere.",
@@ -105,7 +105,7 @@ function createDots() {
 function startAutoSlide() {
     autoSlideTimer = window.setInterval(function() {
         goToBeer(currentBeerIndex + 1);
-    }, 5000);
+    }, 8000);
 }
 
 function restartAutoSlide() {
