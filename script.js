@@ -135,7 +135,13 @@ certificateModalClose?.addEventListener("click",closeCertificate);
 certificateModalBackdrop?.addEventListener("click",closeCertificate);
 
 document.addEventListener("keydown",e=>{
-    if(e.key==="Escape") closeCertificate();
+    if(
+        e.key==="Escape" &&
+        certificateModal &&
+        certificateModal.classList.contains("open")
+    ){
+        closeCertificate();
+    }
 });
 
 createDots();
