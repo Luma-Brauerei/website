@@ -218,33 +218,26 @@
         <section id="preise" class="section section-dark">
             <div class="section-head">
                 <p class="eyebrow">Awards</p>
-
-                <h2>Awards</h2>
-
+                <h2>Auszeichnungen</h2>
                 <p>
-                    Beim Brau- und Rauchshop Bier Contest konnten wir mit unserem Double IPA den 1. Platz gewinnen.
-                    Weitere Platzierungen folgten unter anderem mit Witbier.
+                    Beim Brau- und Rauchshop Bier Contest konnten wir mit unserem Double IPA
+                    den 1. und 2. Rang sowie mit unserem Witbier den 3. Rang erreichen.
                 </p>
             </div>
 
-            <div class="cards two">
-                <div class="award-card">
-                    <div class="award-image" style="background-image: url('award-double-ipa.jpg');"></div>
-
-                    <div>
-                        <h3>1. Platz – Double IPA</h3>
-                        <p>Brau- und Rauchshop Bier Contest.</p>
-                    </div>
-                </div>
-
-                <div class="award-card">
-                    <div class="award-image" style="background-image: url('award-witbier.jpg');"></div>
-
-                    <div>
-                        <h3>Weitere Platzierungen</h3>
-                        <p>Unter anderem mit Witbier.</p>
-                    </div>
-                </div>
+            <div class="certificate-grid">
+                <button type="button" class="certificate-card" data-certificate="Zertifikat_1.Rang_DIPA.png" data-title="1. Rang – Double IPA" aria-label="Zertifikat 1. Rang Double IPA vergrössern">
+                    <img src="Zertifikat_1.Rang_DIPA.png" alt="Zertifikat 1. Rang Double IPA" loading="lazy">
+                    <span class="certificate-content"><strong>1. Rang – Double IPA</strong><small>Brau- und Rauchshop Bier Contest</small></span>
+                </button>
+                <button type="button" class="certificate-card" data-certificate="Zertifikat_2.Rang_DIPA.png" data-title="2. Rang – Double IPA" aria-label="Zertifikat 2. Rang Double IPA vergrössern">
+                    <img src="Zertifikat_2.Rang_DIPA.png" alt="Zertifikat 2. Rang Double IPA" loading="lazy">
+                    <span class="certificate-content"><strong>2. Rang – Double IPA</strong><small>Brau- und Rauchshop Bier Contest</small></span>
+                </button>
+                <button type="button" class="certificate-card" data-certificate="Zertifikat_3.Rang_Wit.png" data-title="3. Rang – Witbier" aria-label="Zertifikat 3. Rang Witbier vergrössern">
+                    <img src="Zertifikat_3.Rang_Wit.png" alt="Zertifikat 3. Rang Witbier" loading="lazy">
+                    <span class="certificate-content"><strong>3. Rang – Witbier</strong><small>Brau- und Rauchshop Bier Contest</small></span>
+                </button>
             </div>
         </section>
 
@@ -332,6 +325,18 @@
             </div>
         </section>
     </main>
+
+
+    <div class="certificate-modal" id="certificateModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle">
+        <button type="button" class="certificate-modal-backdrop" id="certificateModalBackdrop" aria-label="Zertifikat schliessen"></button>
+        <div class="certificate-modal-content">
+            <div class="certificate-modal-header">
+                <h2 id="certificateModalTitle">Zertifikat</h2>
+                <button type="button" class="certificate-modal-close" id="certificateModalClose" aria-label="Zertifikat schliessen">×</button>
+            </div>
+            <div class="certificate-modal-image-wrap"><img id="certificateModalImage" src="" alt=""></div>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <p>© 2025 LUMA Brauerei · Aarau</p>
