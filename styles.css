@@ -400,68 +400,6 @@ a {
     margin-bottom: 12px;
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 34px;
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
-.about-text {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    padding: 30px;
-}
-
-.about-text h3 {
-    margin-bottom: 10px;
-}
-
-.about-text p {
-    color: var(--muted);
-    margin-bottom: 26px;
-}
-
-.about-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-.image-card,
-.award-image {
-    min-height: 320px;
-    border-radius: 22px;
-    border: 1px solid var(--border);
-    background:
-        linear-gradient(135deg, rgba(141,255,120,0.18), rgba(255,79,163,0.14)),
-        #1c222c;
-    background-size: cover;
-    background-position: center;
-}
-
-.award-card {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 22px;
-    align-items: center;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 5px solid var(--yellow);
-    border-radius: 22px;
-    padding: 24px;
-}
-
-.award-image {
-    min-height: 160px;
-}
-
-.award-card p {
-    color: var(--muted);
-}
-
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -509,6 +447,17 @@ a {
     color: var(--green);
 }
 
+
+
+.awards-section {
+    background:
+        radial-gradient(
+            circle at bottom left,
+            rgba(255, 211, 78, 0.07),
+            transparent 30%
+        ),
+        var(--bg);
+}
 
 .certificate-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1180px;margin:0 auto;}
 .certificate-card {display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--border);border-radius:22px;background:var(--card);color:var(--text);text-align:left;cursor:pointer;box-shadow:var(--shadow);transition:transform .18s ease,border-color .18s ease;}
@@ -704,6 +653,7 @@ body.modal-open {overflow:hidden;}
     color: var(--text);
     font-size: 0.88rem;
 }
+
 @media (max-width: 920px) {
     .site-header {
         grid-template-columns: auto auto auto;
@@ -728,12 +678,14 @@ body.modal-open {overflow:hidden;}
 
     .hero-main,
     .beer-slide,
-    .about-grid,
     .contact-grid,
     .legal-grid,
     .cards.two,
     .cards.three,
-    .certificate-grid {
+    .certificate-grid,
+    .founder-feature,
+    .about-story-grid,
+    .current-event-card {
         grid-template-columns: 1fr;
     }
 
@@ -749,28 +701,15 @@ body.modal-open {overflow:hidden;}
         grid-template-columns: 1fr;
     }
 
-    .about-images {
-        grid-template-columns: 1fr;
+    .founder-feature-image,
+    .founder-feature-image img {
+        min-height: 360px;
     }
 
-    .award-card {
-        grid-template-columns: 1fr;
+    .current-event-date {
+        min-height: auto;
+        padding: 34px;
     }
-.founder-feature,
-.about-story-grid,
-.current-event-card {
-    grid-template-columns: 1fr;
-}
-
-.founder-feature-image,
-.founder-feature-image img {
-    min-height: 360px;
-}
-
-.current-event-date {
-    min-height: auto;
-    padding: 34px;
-}
 }
 
 @media (max-width: 560px) {
@@ -802,21 +741,39 @@ body.modal-open {overflow:hidden;}
         right: 8px;
     }
 
-    .certificate-modal {padding:10px;}
-    .certificate-modal-content {max-height:calc(100vh - 20px);border-radius:16px;}
-    .certificate-modal-image-wrap {max-height:calc(100vh - 92px);padding:8px;}
-    .certificate-modal-header {padding:12px 14px;}
-.founder-feature-content,
-.current-event-content {
-    padding: 26px;
-}
+    .certificate-modal {
+        padding: 10px;
+    }
 
-.founder-feature-image,
-.founder-feature-image img {
-    min-height: 280px;
-}
+    .certificate-modal-content {
+        max-height: calc(100vh - 20px);
+        border-radius: 16px;
+    }
 
-.about-story-content {
-    padding: 22px;
-}
+    .certificate-modal-image-wrap {
+        max-height: calc(100vh - 92px);
+        padding: 8px;
+    }
+
+    .certificate-modal-header {
+        padding: 12px 14px;
+    }
+
+    .founder-feature-content,
+    .current-event-content {
+        padding: 26px;
+    }
+
+    .founder-feature-image,
+    .founder-feature-image img {
+        min-height: 280px;
+    }
+
+    .about-story-content {
+        padding: 22px;
+    }
+
+    .current-event-date span {
+        font-size: 4rem;
+    }
 }
