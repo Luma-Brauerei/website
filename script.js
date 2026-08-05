@@ -1,1025 +1,455 @@
-:root {
-    --bg: #0f1115;
-    --bg-soft: #171b22;
-    --card: #202631;
-    --text: #f4f4f4;
-    --muted: #b7bdc8;
-    --green: #8dff78;
-    --yellow: #ffd34e;
-    --pink: #ff4fa3;
-    --border: rgba(255, 255, 255, 0.13);
-    --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-    --header-height: 76px;
-}
-
-* {
-    min-width: 0;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: var(--header-height);
-}
-
-body {
-    min-width: 0;
-    overflow-wrap: break-word;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    min-height: var(--header-height);
-    padding: 12px 26px;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 22px;
-    background: rgba(15, 17, 21, 0.94);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 900;
-    letter-spacing: 0.02em;
-}
-
-.brand img {
-    width: 42px;
-    height: 42px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.main-nav {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    color: var(--muted);
-    font-size: 0.95rem;
-}
-
-.main-nav a:hover {
-    color: var(--green);
-}
-
-.social-links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.social-links a {
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    display: grid;
-    place-items: center;
-    background: rgba(255, 255, 255, 0.04);
-    transition: transform 0.15s ease, background 0.15s ease;
-}
-.instagram-link {
-    background: linear-gradient(
-        45deg,
-        #F58529,
-        #DD2A7B,
-        #8134AF,
-        #515BD4
-    ) !important;
-    border: none !important;
-}
-
-.untappd-link {
-    background: #FFC000 !important;
-    border: none !important;
-}
-
-.social-links img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-}
-
-.instagram-link:hover,
-.untappd-link:hover {
-    transform: scale(1.1);
-}
-.social-links a:hover {
-    transform: translateY(-2px);
-    background: rgba(141, 255, 120, 0.12);
-}
-
-.social-links img {
-    width: 18px;
-    height: 18px;
-    display: block;
-    object-fit: contain;
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--text);
-    border-radius: 10px;
-    padding: 8px 10px;
-    font-size: 1.2rem;
-}
-
-.hero-main {
-    min-height: calc(100vh - var(--header-height));
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-    gap: 54px;
-    padding: 80px 7vw;
-    background:
-        radial-gradient(circle at top left, rgba(141, 255, 120, 0.15), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(255, 79, 163, 0.13), transparent 32%),
-        linear-gradient(135deg, #0f1115, #171b22);
-}
-
-.eyebrow {
-    color: var(--green);
-    font-size: 0.78rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    margin-bottom: 14px;
-}
-
-.hero-content h1 {
-    font-size: clamp(3rem, 8vw, 6.8rem);
-    line-height: 0.92;
-    letter-spacing: -0.06em;
-    margin-bottom: 26px;
-}
-
-.hero-content p {
-    max-width: 640px;
-    color: var(--muted);
-    font-size: 1.18rem;
-    margin-bottom: 30px;
-}
-
-.hero-logo {
-    background: linear-gradient(145deg, rgba(141,255,120,0.18), rgba(255,79,163,0.12));
-    border: 1px solid var(--border);
-    border-radius: 28px;
-    padding: 24px;
-    box-shadow: var(--shadow);
-}
-
-.hero-logo img {
-    width: 100%;
-    display: block;
-    border-radius: 22px;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    padding: 13px 19px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    font-weight: 900;
-    transition: transform 0.15s ease, background 0.15s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.btn-primary {
-    background: var(--green);
-    color: #071007;
-    border-color: var(--green);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--text);
-}
-
-.section {
-    padding: 86px 7vw;
-}
-
-.section-dark {
-    background: var(--bg-soft);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-.section-head {
-    max-width: 860px;
-    margin-bottom: 38px;
-}
-
-.section-head h2 {
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    line-height: 1.02;
-    letter-spacing: -0.05em;
-    margin-bottom: 18px;
-}
-
-.section-head p {
-    color: var(--muted);
-    font-size: 1.08rem;
-}
-
-.beer-slider {
-    position: relative;
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
-.beer-slide {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 520px;
-    overflow: hidden;
-    border-radius: 28px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-}
-
-.beer-image {
-    min-height: 420px;
-    background:
-        linear-gradient(135deg, rgba(141,255,120,0.22), rgba(255,211,78,0.14)),
-        #1c222c;
-    background-size: cover;
-    background-position: center;
-}
-
-.beer-info {
-    padding: 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.beer-info h3 {
-    font-size: clamp(2.2rem, 5vw, 4.2rem);
-    line-height: 1;
-    letter-spacing: -0.05em;
-    margin-bottom: 18px;
-}
-
-.beer-info p {
-    color: var(--muted);
-    margin-bottom: 26px;
-}
-
-.beer-facts {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-}
-
-.beer-facts div {
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 14px;
-    background: rgba(255,255,255,0.035);
-}
-
-.beer-facts span {
-    display: block;
-    color: var(--muted);
-    font-size: 0.8rem;
-    margin-bottom: 4px;
-}
-
-.beer-facts strong {
-    color: var(--text);
-}
-
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
-    width: 46px;
-    height: 46px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: rgba(15, 17, 21, 0.78);
-    color: var(--text);
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.slider-btn:hover {
-    background: var(--green);
-    color: #071007;
-}
-
-.slider-btn.prev {
-    left: 16px;
-}
-
-.slider-btn.next {
-    right: 16px;
-}
-
-.slider-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 18px;
-}
-
-.slider-dots button {
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
-    border: none;
-    background: rgba(255,255,255,0.3);
-    cursor: pointer;
-}
-
-.slider-dots button.active {
-    background: var(--green);
-}
-
-.cards {
-    display: grid;
-    gap: 22px;
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
-.cards.two {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.cards.three {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    padding: 28px;
-}
-
-.card h3 {
-    font-size: 1.35rem;
-    margin-bottom: 12px;
-}
-
-.card p {
-    color: var(--muted);
-    margin-bottom: 12px;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 34px;
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
-.about-text {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    padding: 30px;
-}
-
-.about-text h3 {
-    margin-bottom: 10px;
-}
-
-.about-text p {
-    color: var(--muted);
-    margin-bottom: 26px;
-}
-
-.about-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-.image-card,
-.award-image {
-    min-height: 320px;
-    border-radius: 22px;
-    border: 1px solid var(--border);
-    background:
-        linear-gradient(135deg, rgba(141,255,120,0.18), rgba(255,79,163,0.14)),
-        #1c222c;
-    background-size: cover;
-    background-position: center;
-}
-
-.award-card {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 22px;
-    align-items: center;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 5px solid var(--yellow);
-    border-radius: 22px;
-    padding: 24px;
-}
-
-.award-image {
-    min-height: 160px;
-}
-
-.award-card p {
-    color: var(--muted);
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
-.legal {
-    background: #0b0d11;
-}
-
-.legal-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-    color: var(--muted);
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
-.legal-grid h3 {
-    color: var(--text);
-    margin-bottom: 12px;
-}
-
-.site-footer {
-    padding: 32px 7vw;
-    display: flex;
-    justify-content: space-between;
-    gap: 18px;
-    flex-wrap: wrap;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    background: #090a0d;
-}
-
-.site-footer div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.site-footer a:hover {
-    color: var(--green);
-}
-
-
-.awards-section {
-    background:
-        radial-gradient(
-            circle at bottom left,
-            rgba(255, 211, 78, 0.07),
-            transparent 30%
-        ),
-        var(--bg);
-}
-
-
-.top-event-section {
-    padding: 28px 7vw;
-    border-bottom: 1px solid var(--border);
-    background:
-        radial-gradient(
-            circle at top left,
-            rgba(255, 211, 78, 0.13),
-            transparent 34%
-        ),
-        radial-gradient(
-            circle at bottom right,
-            rgba(141, 255, 120, 0.11),
-            transparent 30%
-        ),
-        var(--bg-soft);
-}
-
-.top-event-inner {
-    display: grid;
-    grid-template-columns: 220px minmax(0, 1fr);
-    gap: 34px;
-    align-items: center;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 24px 30px;
-    border: 1px solid var(--border);
-    border-radius: 28px;
-    background: rgba(32, 38, 49, 0.92);
-    box-shadow: var(--shadow);
-}
-
-.top-event-logo {
-    display: grid;
-    place-items: center;
-    min-height: 190px;
-    padding: 16px;
-    border-radius: 20px;
-    background: #ffffff;
-}
-
-.top-event-logo img {
-    display: block;
-    width: 100%;
-    max-width: 170px;
-    height: auto;
-    object-fit: contain;
-}
-
-.top-event-content h2 {
-    max-width: 800px;
-    margin-bottom: 16px;
-    font-size: clamp(2rem, 4.5vw, 3.8rem);
-    line-height: 1.02;
-    letter-spacing: -0.04em;
-}
-
-.top-event-content > p:not(.eyebrow) {
-    max-width: 760px;
-    color: var(--muted);
-    font-size: 1.05rem;
-}
-
-.current-event-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 22px;
-}
-
-.current-event-facts span {
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--text);
-    font-size: 0.88rem;
-}
-
-.certificate-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1180px;margin:0 auto;}
-.certificate-card {display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--border);border-radius:22px;background:var(--card);color:var(--text);text-align:left;cursor:pointer;box-shadow:var(--shadow);transition:transform .18s ease,border-color .18s ease;}
-.certificate-card:hover {transform:translateY(-4px);border-color:var(--yellow);}
-.certificate-card img {display:block;width:100%;aspect-ratio:4/3;object-fit:contain;padding:16px;background:#fff;}
-.certificate-content {display:block;padding:20px;}
-.certificate-content strong,.certificate-content small {display:block;}
-.certificate-content strong {font-size:1.15rem;line-height:1.25;}
-.certificate-content small {margin-top:8px;color:var(--muted);}
-.certificate-modal {position:fixed;z-index:3000;inset:0;display:none;align-items:center;justify-content:center;padding:24px;}
-.certificate-modal.open {display:flex;}
-.certificate-modal-backdrop {position:absolute;inset:0;border:0;background:rgba(0,0,0,.82);cursor:pointer;}
-.certificate-modal-content {position:relative;z-index:1;width:min(1100px,100%);max-height:calc(100vh - 48px);overflow:hidden;border:1px solid var(--border);border-radius:24px;background:var(--bg-soft);box-shadow:var(--shadow);}
-.certificate-modal-header {display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 20px;border-bottom:1px solid var(--border);}
-.certificate-modal-header h2 {font-size:1.2rem;}
-.certificate-modal-close {flex:0 0 auto;width:42px;height:42px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.05);color:var(--text);font-size:1.8rem;line-height:1;cursor:pointer;}
-.certificate-modal-close:hover {background:var(--green);color:#071007;}
-.certificate-modal-image-wrap {max-height:calc(100vh - 130px);overflow:auto;padding:20px;background:#fff;}
-.certificate-modal-image-wrap img {display:block;width:auto;max-width:100%;height:auto;margin:0 auto;}
-body.modal-open {overflow:hidden;}
-.about-section {
-    background:
-        radial-gradient(
-            circle at top right,
-            rgba(141, 255, 120, 0.08),
-            transparent 32%
-        ),
-        var(--bg);
-}
-
-.about-heading {
-    max-width: 950px;
-}
-
-.founder-feature {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    max-width: 1180px;
-    margin: 0 auto 28px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    border-radius: 28px;
-    background: var(--card);
-    box-shadow: var(--shadow);
-}
-
-.founder-feature-image {
-    min-height: 460px;
-    background: #151922;
-}
-
-.founder-feature-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    min-height: 460px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.founder-feature-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 48px;
-}
-
-.founder-feature-content h3 {
-    margin-bottom: 20px;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1;
-}
-
-.founder-feature-content p {
-    margin-bottom: 18px;
-    color: var(--muted);
-}
-
-.about-story-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-    max-width: 1180px;
-    margin: 0 auto;
-}
-
-.about-story-card {
-    overflow: hidden;
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    background: var(--card);
-    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
-}
-
-.about-story-card img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-}
-
-.about-story-content {
-    padding: 26px;
-}
-
-.about-story-content h3 {
-    margin-bottom: 14px;
-    font-size: 1.35rem;
-}
-
-.about-story-content p {
-    margin-bottom: 12px;
-    color: var(--muted);
-}
-
-.current-event-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 24px;
-}
-
-.current-event-facts span {
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--text);
-    font-size: 0.88rem;
-}
-@media (max-width: 920px) {
-    :root {
-        --header-height: 68px;
-    }
-
-    body {
-        overflow-x: hidden;
-    }
-
-    .site-header {
-        grid-template-columns: minmax(0, 1fr) auto auto;
-        padding: 10px 18px;
-        gap: 12px;
-    }
-
-    .brand,
-    .hero-content,
-    .top-event-content,
-    .beer-info,
-    .founder-feature-content,
-    .card,
-    .about-story-content {
-        min-width: 0;
-    }
-
-    .brand img {
-        width: 38px;
-        height: 38px;
-    }
-
-    .menu-toggle {
-        display: block;
-        justify-self: end;
-        cursor: pointer;
-    }
-
-    .main-nav {
-        display: none;
-        grid-column: 1 / -1;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 4px;
-        padding-top: 10px;
-    }
-
-    .main-nav a {
-        padding: 10px 0;
-        border-top: 1px solid var(--border);
-    }
-
-    .main-nav.open {
-        display: flex;
-    }
-
-    .hero-main,
-    .beer-slide,
-    .about-grid,
-    .contact-grid,
-    .legal-grid,
-    .cards.two,
-    .cards.three,
-    .certificate-grid,
-    .top-event-inner,
-    .founder-feature,
-    .about-story-grid {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .hero-main {
-        min-height: auto;
-        gap: 34px;
-        padding-top: 48px;
-        padding-bottom: 56px;
-    }
-
-    .hero-logo {
-        width: min(100%, 520px);
-        margin: 0 auto;
-    }
-
-    .top-event-section {
-        padding: 22px 5vw;
-    }
-
-    .top-event-inner {
-        gap: 22px;
-        padding: 22px;
-    }
-
-    .top-event-logo {
-        min-height: 0;
-        padding: 20px;
-    }
-
-    .top-event-logo img {
-        max-width: 180px;
-    }
-
-    .beer-slide {
-        min-height: 0;
-    }
-
-    .beer-image {
-        min-height: 360px;
-    }
-
-    .beer-info {
-        padding: 34px;
-    }
-
-    .beer-facts,
-    .about-images,
-    .award-card {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .founder-feature-image,
-    .founder-feature-image img {
-        min-height: 360px;
-    }
-
-    .founder-feature-content {
-        padding: 34px;
-    }
-
-    .about-story-grid {
-        gap: 18px;
-    }
-}
-
-@media (max-width: 560px) {
-    :root {
-        --header-height: 62px;
-    }
-
-    .site-header {
-        grid-template-columns: minmax(0, 1fr) auto auto;
-        padding: 9px 14px;
-        gap: 8px;
-    }
-
-    .brand span {
-        display: none;
-    }
-
-    .social-links {
-        gap: 7px;
-    }
-
-    .social-links a {
-        width: 30px;
-        height: 30px;
-    }
-
-    .menu-toggle {
-        padding: 6px 9px;
-    }
-
-    .section,
-    .hero-main {
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-    .section {
-        padding-top: 62px;
-        padding-bottom: 62px;
-    }
-
-    .top-event-section {
-        padding: 16px;
-    }
-
-    .top-event-inner {
-        padding: 18px;
-        border-radius: 20px;
-    }
-
-    .top-event-logo {
-        padding: 16px;
-        border-radius: 16px;
-    }
-
-    .hero-main {
-        padding-top: 38px;
-        padding-bottom: 48px;
-    }
-
-    .hero-content h1 {
-        font-size: clamp(2.7rem, 16vw, 4rem);
-        overflow-wrap: anywhere;
-    }
-
-    .hero-content p,
-    .section-head p,
-    .top-event-content > p:not(.eyebrow) {
-        font-size: 1rem;
-    }
-
-    .hero-buttons {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    .hero-logo,
-    .beer-slide,
-    .founder-feature,
-    .card,
-    .about-story-card,
-    .certificate-card {
-        border-radius: 18px;
-    }
-
-    .beer-image {
-        min-height: 280px;
-    }
-
-    .beer-info,
-    .founder-feature-content,
-    .card,
-    .about-story-content {
-        padding: 22px;
-    }
-
-    .beer-info h3 {
-        font-size: clamp(2rem, 13vw, 3rem);
-    }
-
-    .beer-facts {
-        gap: 10px;
-    }
-
-    .slider-btn {
-        top: 140px;
-        width: 40px;
-        height: 40px;
-    }
-
-    .slider-btn.prev {
-        left: 8px;
-    }
-
-    .slider-btn.next {
-        right: 8px;
-    }
-
-    .founder-feature-image,
-    .founder-feature-image img {
-        min-height: 280px;
-    }
-
-    .about-story-card img {
-        aspect-ratio: 4 / 3;
-    }
-
-    .current-event-facts span {
-        width: 100%;
-        text-align: center;
-    }
-
-    .certificate-modal {
-        padding: 10px;
-    }
-
-    .certificate-modal-content {
-        max-height: calc(100vh - 20px);
-        border-radius: 16px;
-    }
-
-    .certificate-modal-image-wrap {
-        max-height: calc(100vh - 92px);
-        padding: 8px;
-    }
-
-    .certificate-modal-header {
-        padding: 12px 14px;
-    }
-
-    .site-footer {
-        padding: 26px 18px;
-        flex-direction: column;
-    }
-
-    .site-footer div {
-        flex-direction: column;
-        gap: 8px;
-    }
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMA Brauerei – Aarauer Craft Beer</title>
+
+    <meta name="description" content="LUMA Brauerei aus Aarau. Craft Beer, Kegs für Feste, Helles, Brown Ale, Cold IPA, Hazy IPA und Spezialbiere auf Anfrage.">
+    <link rel="canonical" href="https://luma-brauerei.ch/">
+
+    <meta property="og:title" content="LUMA Brauerei – Aarauer Craft Beer">
+    <meta property="og:description" content="Kleine unabhängige Brauerei aus Aarau. Helles, Brown Ale, Cold IPA, Hazy IPA und Spezialbiere auf Anfrage.">
+    <meta property="og:image" content="https://luma-brauerei.ch/Logo.png">
+    <meta property="og:url" content="https://luma-brauerei.ch/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_CH">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LUMA Brauerei – Aarauer Craft Beer">
+    <meta name="twitter:description" content="Kleine unabhängige Brauerei aus Aarau. Helles, Brown Ale, Cold IPA, Hazy IPA und Spezialbiere auf Anfrage.">
+    <meta name="twitter:image" content="https://luma-brauerei.ch/Logo.png">
+
+    <link rel="icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+    <meta name="msapplication-TileColor" content="#0b1020">
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="#start" class="brand">
+            <img src="Logo.png" alt="LUMA Brauerei Logo">
+            <span>LUMA Brauerei</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">☰</button>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="#biere">Unsere Biere</a>
+            <a href="#feste">Bier für Feste</a>
+            <a href="#ueber-uns">Über uns</a>
+            <a href="#aktuelles">Aktuelles</a>
+            <a href="#preise">Awards</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="social-links">
+            <a class="instagram-link"
+               href="https://www.instagram.com/luma_brauerei/"
+               target="_blank"
+               rel="noopener"
+               aria-label="Instagram">
+                <img src="Instagram Icon.png" alt="Instagram">
+            </a>
+
+            <a class="untappd-link"
+               href="https://untappd.com/w/luma-brauerei/602341/beer"
+               target="_blank"
+               rel="noopener"
+               aria-label="Untappd">
+                <img src="Untappd Icon.png" alt="Untappd">
+            </a>
+        </div>
+    </header>
+
+    <main id="start">
+
+        <section id="aktuelles" class="top-event-section">
+            <div class="top-event-inner">
+                <div class="top-event-logo">
+                    <img
+                        src="aarauer-bierwanderung.png"
+                        alt="Logo Aarauer Bierwanderung"
+                        loading="eager"
+                    >
+                </div>
+
+                <div class="top-event-content">
+                    <p class="eyebrow">Aktuelles</p>
+
+                    <h2>Wir sind an der Aarauer Bierwanderung dabei</h2>
+
+                    <p>
+                        Am 15. August 2026 schenken wir unsere Biere am Standort
+                        Friedenslinde aus. Wir freuen uns auf bekannte Gesichter,
+                        neue Begegnungen und einen genussvollen Wandertag.
+                    </p>
+
+                    <div class="current-event-facts">
+                        <span>15. August 2026</span>
+                        <span>Friedenslinde</span>
+                        <span>Ausschank ins Wanderglas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-main">
+            <div class="hero-content">
+                <p class="eyebrow">Aarauer Craft Beer</p>
+
+                <h1>LUMA Brauerei</h1>
+
+                <p>
+                    Kleine unabhängige Brauerei aus Aarau. Entstanden aus der gemeinsamen
+                    Leidenschaft von Lukas und Manuel und heute als vierköpfiges Team
+                    weitergeführt. Klassische Biere, moderne IPAs und Spezialbiere auf Anfrage.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#biere" class="btn btn-primary">Unsere Biere</a>
+                    <a href="#feste" class="btn btn-secondary">Bier für Feste</a>
+                </div>
+            </div>
+
+            <div class="hero-logo">
+                <img src="Logo.png" alt="LUMA Brauerei Logo">
+            </div>
+        </section>
+
+        <section id="biere" class="section">
+            <div class="section-head">
+                <p class="eyebrow">Sortiment</p>
+
+                <h2>Unsere Biere</h2>
+
+                <p>
+                    Unser Standardangebot umfasst Helles, Brown Ale, Cold IPA und Hazy IPA.
+                    Weitere Bierstile brauen wir auf Anfrage.
+                </p>
+            </div>
+
+            <div class="beer-slider">
+                <button class="slider-btn prev" id="prevBeer" aria-label="Vorheriges Bier">‹</button>
+
+                <article class="beer-slide">
+                    <div class="beer-image" id="beerImage"></div>
+
+                    <div class="beer-info">
+                        <p class="eyebrow" id="beerStyle">Style</p>
+
+                        <h3 id="beerName">Biername</h3>
+
+                        <p id="beerDescription">Beschreibung</p>
+
+                        <div class="beer-facts">
+                            <div>
+                                <span>Hopfen</span>
+                                <strong id="beerHops">–</strong>
+                            </div>
+
+                            <div>
+                                <span>Malz</span>
+                                <strong id="beerMalts">–</strong>
+                            </div>
+
+                            <div>
+                                <span>IBU</span>
+                                <strong id="beerIbu">–</strong>
+                            </div>
+
+                            <div>
+                                <span>Alkohol</span>
+                                <strong id="beerAbv">–</strong>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <button class="slider-btn next" id="nextBeer" aria-label="Nächstes Bier">›</button>
+            </div>
+
+            <div class="slider-dots" id="beerDots"></div>
+        </section>
+
+        <section id="feste" class="section section-dark">
+            <div class="section-head">
+                <p class="eyebrow">Kegs & Ausschank</p>
+
+                <h2>Bier für Feste</h2>
+
+                <p>
+                    Für Geburtstage, Vereinsanlässe, Firmenfeste oder private Feiern bieten wir Bier in Kegs an.
+                    Durchlaufkühler, CO₂-Flasche und Zubehör können auf Anfrage bereitgestellt werden.
+                </p>
+            </div>
+
+            <div class="cards three">
+                <div class="card">
+                    <h3>1. Anlass anfragen</h3>
+                    <p>Datum, Ort, Personenzahl und gewünschter Bierstil reichen für eine erste Einschätzung.</p>
+                </div>
+
+                <div class="card">
+                    <h3>2. Bier auswählen</h3>
+                    <p>Standardbier oder Spezialbier auf Anfrage, abhängig von Menge und Vorlaufzeit.</p>
+                </div>
+
+                <div class="card">
+                    <h3>3. Ausschank vorbereiten</h3>
+                    <p>Kegs, Durchlaufkühler, CO₂-Flasche und Zubehör werden passend zum Anlass geplant.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ueber-uns" class="section about-section">
+    <div class="section-head about-heading">
+        <p class="eyebrow">Über uns</p>
+
+        <h2>Von Lukas und Manuel gegründet. Gemeinsam weiterentwickelt.</h2>
+
+        <p>
+            LUMA steht für Lukas und Manuel. Aus ihrer gemeinsamen Begeisterung
+            für gutes Bier entstand zuerst ein Kellerprojekt und daraus Schritt
+            für Schritt eine eigenständige Aarauer Kleinbrauerei.
+        </p>
+    </div>
+
+    <div class="founder-feature">
+        <div class="founder-feature-image">
+            <img
+                src="about-lukas-manuel.png"
+                alt="Die Gründer der LUMA Brauerei vor der Brauanlage"
+                loading="lazy"
+            >
+        </div>
+
+        <div class="founder-feature-content">
+            <p class="eyebrow">Die Gründer</p>
+
+            <h3>Lukas und Manuel</h3>
+
+            <p>
+                Lukas und Manuel haben die LUMA Brauerei gegründet und aus einer
+                spontanen Idee ein konsequent wachsendes Brauprojekt aufgebaut.
+                Was mit einer kleinen Anlage im Keller begann, wurde laufend
+                erweitert und professionalisiert.
+            </p>
+
+            <p>
+                Heute brauen wir auf einer Anlage mit rund 160 Litern pro Sud.
+                Dabei verbinden wir handwerkliches Brauen mit technischer
+                Neugier, sauberen Prozessen und dem Anspruch, jedes Bier
+                weiterzuentwickeln.
+            </p>
+        </div>
+    </div>
+
+    <div class="about-story-grid">
+        <article class="about-story-card">
+            <img
+                src="about-brauanlage.png"
+                alt="Moderne Brauanlage aus Edelstahl"
+                loading="lazy"
+            >
+
+            <div class="about-story-content">
+                <h3>Handwerk und Technik</h3>
+
+                <p>
+                    Wir brauen in kleinen Chargen und arbeiten laufend an
+                    Rezepturen, Verfahren und Qualität. Gute Rohstoffe und
+                    reproduzierbare Prozesse bilden die Grundlage.
+                </p>
+            </div>
+        </article>
+
+        <article class="about-story-card">
+            <img
+                src="about-rohstoffe.png"
+                alt="Malz und Hopfen als Rohstoffe für Bier"
+                loading="lazy"
+            >
+
+            <div class="about-story-content">
+                <h3>Gemeinsam gewachsen</h3>
+
+                <p>
+                    Lukas und Manuel haben LUMA gegründet und den Grundstein
+                    für die Brauerei gelegt. Heute wird das Projekt gemeinsam
+                    mit Björn und Marco als vierköpfiges Team weitergeführt.
+                </p>
+
+                <p>
+                    Dabei bringt jeder seine Stärken ein – vom Brauen und der
+                    Technik über Qualität und Organisation bis zu Verkauf,
+                    Auftritten und Events.
+                </p>
+            </div>
+        </article>
+
+        <article class="about-story-card">
+            <img
+                src="about-biere.png"
+                alt="Verschiedene Bierflaschen und gefüllte Biergläser"
+                loading="lazy"
+            >
+
+            <div class="about-story-content">
+                <h3>Unsere Haltung</h3>
+
+                <p>
+                    Wir möchten charaktervolle, ehrliche Biere brauen, die wir
+                    selbst gerne trinken. Dabei bleiben wir experimentierfreudig,
+                    ohne Qualität und Trinkbarkeit aus den Augen zu verlieren.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+<section id="preise" class="section awards-section">
+            <div class="section-head">
+                <p class="eyebrow">Awards</p>
+                <h2>Auszeichnungen</h2>
+                <p>
+                    Beim Brau- und Rauchshop Bier Contest konnten wir mit unserem Double IPA
+                    den 1. und 2. Rang sowie mit unserem Witbier den 3. Rang erreichen.
+                </p>
+            </div>
+
+            <div class="certificate-grid">
+                <button type="button" class="certificate-card" data-certificate="Zertifikat_1.Rang_DIPA.png" data-title="1. Rang – Double IPA" aria-label="Zertifikat 1. Rang Double IPA vergrössern">
+                    <img src="Zertifikat_1.Rang_DIPA.png" alt="Zertifikat 1. Rang Double IPA" loading="lazy">
+                    <span class="certificate-content"><strong>1. Rang – Double IPA</strong><small>Brau- und Rauchshop Bier Contest</small></span>
+                </button>
+                <button type="button" class="certificate-card" data-certificate="Zertifikat_2.Rang_DIPA.png" data-title="2. Rang – Double IPA" aria-label="Zertifikat 2. Rang Double IPA vergrössern">
+                    <img src="Zertifikat_2.Rang_DIPA.png" alt="Zertifikat 2. Rang Double IPA" loading="lazy">
+                    <span class="certificate-content"><strong>2. Rang – Double IPA</strong><small>Brau- und Rauchshop Bier Contest</small></span>
+                </button>
+                <button type="button" class="certificate-card" data-certificate="Zertifikat_3.Rang_Wit.png" data-title="3. Rang – Witbier" aria-label="Zertifikat 3. Rang Witbier vergrössern">
+                    <img src="Zertifikat_3.Rang_Wit.png" alt="Zertifikat 3. Rang Witbier" loading="lazy">
+                    <span class="certificate-content"><strong>3. Rang – Witbier</strong><small>Brau- und Rauchshop Bier Contest</small></span>
+                </button>
+            </div>
+        </section>
+
+        <section id="kontakt" class="section">
+            <div class="section-head">
+                <p class="eyebrow">Kontakt</p>
+
+                <h2>Anfrage stellen</h2>
+
+                <p>
+                    Für Kegs, Spezialbiere oder allgemeine Fragen zur LUMA Brauerei.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="card">
+                    <h3>LUMA Brauerei</h3>
+
+                    <p>
+                        Hauptstrasse 102<br>
+                        5032 Aarau
+                    </p>
+
+                    <p>
+                        Telefon:
+                        <a href="tel:+41765761212">076 576 12 12</a>
+                    </p>
+
+                    <p>
+                        E-Mail:
+                        <a href="mailto:lumabrauerei@gmail.com">lumabrauerei@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Keg-Anfrage</h3>
+
+                    <p>
+                        Bitte nenne Datum, Ort, Personenzahl, gewünschten Bierstil,
+                        Bedarf an Durchlaufkühler/CO₂ und deine Kontaktdaten.
+                    </p>
+
+                    <a class="btn btn-primary" href="mailto:lumabrauerei@gmail.com?subject=Keg-Anfrage%20LUMA%20Brauerei">
+                        Anfrage per E-Mail
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="rechtliches" class="section legal">
+            <div class="section-head">
+                <p class="eyebrow">Rechtliches</p>
+
+                <h2>Impressum & Datenschutz</h2>
+            </div>
+
+            <div class="legal-grid">
+                <div>
+                    <h3>Impressum</h3>
+
+                    <p>
+                        LUMA Brauerei<br>
+                        Hauptstrasse 102<br>
+                        5032 Aarau<br>
+                        Schweiz
+                    </p>
+
+                    <p>
+                        E-Mail:
+                        <a href="mailto:lumabrauerei@gmail.com">lumabrauerei@gmail.com</a><br>
+                        Telefon:
+                        <a href="tel:+41765761212">076 576 12 12</a>
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Datenschutz</h3>
+
+                    <p>
+                        Beim Besuch dieser Webseite können technisch notwendige Zugriffsdaten verarbeitet werden.
+                        Bei Kontaktaufnahme per E-Mail oder Telefon werden die übermittelten Angaben zur Bearbeitung
+                        der Anfrage verwendet. Es werden keine Zahlungsdaten über diese Webseite verarbeitet.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <div class="certificate-modal" id="certificateModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle">
+        <button type="button" class="certificate-modal-backdrop" id="certificateModalBackdrop" aria-label="Zertifikat schliessen"></button>
+        <div class="certificate-modal-content">
+            <div class="certificate-modal-header">
+                <h2 id="certificateModalTitle">Zertifikat</h2>
+                <button type="button" class="certificate-modal-close" id="certificateModalClose" aria-label="Zertifikat schliessen">×</button>
+            </div>
+            <div class="certificate-modal-image-wrap"><img id="certificateModalImage" src="" alt=""></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2026 LUMA Brauerei · Aarau</p>
+
+        <div>
+            <a href="#rechtliches">Impressum & Datenschutz</a>
+            <a href="https://www.instagram.com/luma_brauerei/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://untappd.com/w/luma-brauerei/602341/beer" target="_blank" rel="noopener">Untappd</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
