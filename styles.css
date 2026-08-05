@@ -13,6 +13,7 @@
 }
 
 * {
+    min-width: 0;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,6 +25,8 @@ html {
 }
 
 body {
+    min-width: 0;
+    overflow-wrap: break-word;
     font-family: Arial, Helvetica, sans-serif;
     background: var(--bg);
     color: var(--text);
@@ -729,21 +732,53 @@ body.modal-open {overflow:hidden;}
     font-size: 0.88rem;
 }
 @media (max-width: 920px) {
+    :root {
+        --header-height: 68px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
     .site-header {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        padding: 10px 18px;
+        gap: 12px;
+    }
+
+    .brand,
+    .hero-content,
+    .top-event-content,
+    .beer-info,
+    .founder-feature-content,
+    .card,
+    .about-story-content {
+        min-width: 0;
+    }
+
+    .brand img {
+        width: 38px;
+        height: 38px;
     }
 
     .menu-toggle {
         display: block;
         justify-self: end;
+        cursor: pointer;
     }
 
     .main-nav {
         display: none;
         grid-column: 1 / -1;
         flex-direction: column;
-        align-items: flex-start;
-        padding-top: 14px;
+        align-items: stretch;
+        gap: 4px;
+        padding-top: 10px;
+    }
+
+    .main-nav a {
+        padding: 10px 0;
+        border-top: 1px solid var(--border);
     }
 
     .main-nav.open {
@@ -757,55 +792,183 @@ body.modal-open {overflow:hidden;}
     .legal-grid,
     .cards.two,
     .cards.three,
-    .certificate-grid {
-        grid-template-columns: 1fr;
+    .certificate-grid,
+    .top-event-inner,
+    .founder-feature,
+    .about-story-grid {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .hero-main {
+        min-height: auto;
+        gap: 34px;
         padding-top: 48px;
+        padding-bottom: 56px;
+    }
+
+    .hero-logo {
+        width: min(100%, 520px);
+        margin: 0 auto;
+    }
+
+    .top-event-section {
+        padding: 22px 5vw;
+    }
+
+    .top-event-inner {
+        gap: 22px;
+        padding: 22px;
+    }
+
+    .top-event-logo {
+        min-height: 0;
+        padding: 20px;
+    }
+
+    .top-event-logo img {
+        max-width: 180px;
+    }
+
+    .beer-slide {
+        min-height: 0;
+    }
+
+    .beer-image {
+        min-height: 360px;
     }
 
     .beer-info {
         padding: 34px;
     }
 
-    .beer-facts {
-        grid-template-columns: 1fr;
-    }
-
-    .about-images {
-        grid-template-columns: 1fr;
-    }
-
+    .beer-facts,
+    .about-images,
     .award-card {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
     }
-.founder-feature,
-.about-story-grid,
-.founder-feature-image,
-.founder-feature-image img {
-    min-height: 360px;
-}
 
+    .founder-feature-image,
+    .founder-feature-image img {
+        min-height: 360px;
+    }
+
+    .founder-feature-content {
+        padding: 34px;
+    }
+
+    .about-story-grid {
+        gap: 18px;
+    }
 }
 
 @media (max-width: 560px) {
+    :root {
+        --header-height: 62px;
+    }
+
     .site-header {
-        padding: 10px 16px;
-        gap: 12px;
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        padding: 9px 14px;
+        gap: 8px;
     }
 
     .brand span {
         display: none;
     }
 
+    .social-links {
+        gap: 7px;
+    }
+
+    .social-links a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .menu-toggle {
+        padding: 6px 9px;
+    }
+
     .section,
     .hero-main {
-        padding-left: 22px;
-        padding-right: 22px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .section {
+        padding-top: 62px;
+        padding-bottom: 62px;
+    }
+
+    .top-event-section {
+        padding: 16px;
+    }
+
+    .top-event-inner {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .top-event-logo {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .hero-main {
+        padding-top: 38px;
+        padding-bottom: 48px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.7rem, 16vw, 4rem);
+        overflow-wrap: anywhere;
+    }
+
+    .hero-content p,
+    .section-head p,
+    .top-event-content > p:not(.eyebrow) {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-logo,
+    .beer-slide,
+    .founder-feature,
+    .card,
+    .about-story-card,
+    .certificate-card {
+        border-radius: 18px;
+    }
+
+    .beer-image {
+        min-height: 280px;
+    }
+
+    .beer-info,
+    .founder-feature-content,
+    .card,
+    .about-story-content {
+        padding: 22px;
+    }
+
+    .beer-info h3 {
+        font-size: clamp(2rem, 13vw, 3rem);
+    }
+
+    .beer-facts {
+        gap: 10px;
     }
 
     .slider-btn {
+        top: 140px;
         width: 40px;
         height: 40px;
     }
@@ -818,17 +981,45 @@ body.modal-open {overflow:hidden;}
         right: 8px;
     }
 
-    .certificate-modal {padding:10px;}
-    .certificate-modal-content {max-height:calc(100vh - 20px);border-radius:16px;}
-    .certificate-modal-image-wrap {max-height:calc(100vh - 92px);padding:8px;}
-    .certificate-modal-header {padding:12px 14px;}
-.founder-feature-content,
-.founder-feature-image,
-.founder-feature-image img {
-    min-height: 280px;
-}
+    .founder-feature-image,
+    .founder-feature-image img {
+        min-height: 280px;
+    }
 
-.about-story-content {
-    padding: 22px;
-}
+    .about-story-card img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .current-event-facts span {
+        width: 100%;
+        text-align: center;
+    }
+
+    .certificate-modal {
+        padding: 10px;
+    }
+
+    .certificate-modal-content {
+        max-height: calc(100vh - 20px);
+        border-radius: 16px;
+    }
+
+    .certificate-modal-image-wrap {
+        max-height: calc(100vh - 92px);
+        padding: 8px;
+    }
+
+    .certificate-modal-header {
+        padding: 12px 14px;
+    }
+
+    .site-footer {
+        padding: 26px 18px;
+        flex-direction: column;
+    }
+
+    .site-footer div {
+        flex-direction: column;
+        gap: 8px;
+    }
 }
