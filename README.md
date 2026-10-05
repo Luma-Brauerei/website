@@ -2,38 +2,17 @@
 
 Statische Website für https://luma-brauerei.ch/.
 
-## Ordnerstruktur
+## Neu in dieser Version
 
-```text
-/
-├── index.html
-├── CNAME
-├── robots.txt
-├── sitemap.xml
-├── README.md
-└── assets/
-    ├── css/
-    │   └── styles.css
-    ├── js/
-    │   └── main.js
-    ├── icons/
-    ├── images/
-    │   ├── about/
-    │   ├── awards/
-    │   ├── beers/
-    │   ├── branding/
-    │   ├── events/
-    │   └── social/
-    └── videos/
-        └── events/
-```
+- eigener Pressebereich auf der Startseite
+- neue indexierbare Seite `/presse/`
+- Verlinkung zum Originalartikel der Aargauer Zeitung
+- aktualisierte `sitemap.xml`
+- Organization-Structured-Data (JSON-LD)
+- Open-Graph-Metadaten für die Presseseite
+- interne Verlinkung zwischen Startseite und Presseseite
+- optimierte WebP-Versionen der grossen About- und Bierbilder
 
-## Pflege
+## Veröffentlichung
 
-- HTML-Inhalt: `index.html`
-- Layout/Design: `assets/css/styles.css`
-- JavaScript: `assets/js/main.js`
-- Bilder: passend nach Themen unter `assets/images/`
-- Videos: `assets/videos/`
-
-Datei- und Ordnernamen sind klein geschrieben und verwenden Bindestriche statt Leerzeichen.
+Den Inhalt dieses Ordners in das Root-Verzeichnis des bestehenden GitHub-Pages-Repositories kopieren bzw. die vorhandenen Dateien ersetzen. `CNAME` muss bestehen bleiben.

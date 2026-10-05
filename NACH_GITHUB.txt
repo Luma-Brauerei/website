@@ -1,0 +1,40 @@
+NACH DEM HOCHLADEN AUF GITHUB
+=============================
+
+1. Prüfen, dass GitHub Pages den neuen Stand veröffentlicht hat.
+   Öffnen:
+   https://luma-brauerei.ch/
+   https://luma-brauerei.ch/presse/
+   https://luma-brauerei.ch/sitemap.xml
+   https://luma-brauerei.ch/robots.txt
+
+2. Browser-Cache umgehen:
+   Windows: Strg + F5
+
+3. Google Search Console:
+   - Property luma-brauerei.ch öffnen
+   - Sitemaps öffnen
+   - sitemap.xml erneut einreichen bzw. bestehende Sitemap prüfen
+   - URL-Prüfung für https://luma-brauerei.ch/presse/
+   - "Indexierung beantragen"
+
+4. Danach auch die Startseite prüfen:
+   https://luma-brauerei.ch/
+   Falls Google einen alten Stand zeigt, ebenfalls "Indexierung beantragen".
+
+5. Prüfen, ob die neue URL nach einigen Tagen im Index erscheint:
+   site:luma-brauerei.ch/presse/
+
+6. Aargauer Zeitung / Journalist kontaktieren:
+   freundlich fragen, ob die Erwähnung "LUMA Brauerei" im Artikel auf
+   https://luma-brauerei.ch/ verlinkt werden kann.
+   Ein redaktioneller Link von der Zeitung wäre der wertvollste zusätzliche Schritt.
+
+7. Den Presse-Link auch auf Instagram / anderen eigenen Profilen teilen.
+   Dabei auf die eigene Presseseite verlinken:
+   https://luma-brauerei.ch/presse/
+   Von dort geht es weiter zum Originalartikel.
+
+8. Optional:
+   Google-Unternehmensprofil aktualisieren und dort die Website
+   https://luma-brauerei.ch/ hinterlegen bzw. prüfen.
