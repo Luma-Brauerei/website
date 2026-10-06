@@ -56,7 +56,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="assets/css/styles.css?v=5">
+    <link rel="stylesheet" href="assets/css/styles.css?v=6">
 </head>
 
 <body>
@@ -69,10 +69,10 @@
         <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav">☰</button>
 
         <nav class="main-nav" id="mainNav">
+            <a href="#aktuelles">Aktuelles</a>
             <a href="#biere">Unsere Biere</a>
             <a href="#feste">Bier für Feste</a>
             <a href="#ueber-uns">Über uns</a>
-            <a href="#aktuelles">Aktuelles</a>
             <a href="#presse">Presse</a>
             <a href="#preise">Awards</a>
             <a href="#kontakt">Kontakt</a>
@@ -99,45 +99,92 @@
 
     <main id="start">
 
-        <section id="aktuelles" class="top-event-section">
-            <div class="top-event-inner top-event-recap">
-                <div class="top-event-media" aria-label="Rückblick Aarauer Bierwanderung 2026">
-                    <img
-                        class="top-event-photo"
-                        src="assets/images/events/aarauer-bierwanderung-2026/foto.jpg"
-                        alt="LUMA Brauerei an der Aarauer Bierwanderung 2026"
-                        loading="eager"
-                    >
+        <section id="aktuelles" class="top-event-section" aria-label="Aktuelles von LUMA">
+            <div class="current-slider" id="currentSlider">
+                <article class="current-slide active" data-current-slide="0" aria-hidden="false">
+                    <div class="top-event-inner top-event-recap">
+                        <div class="top-event-media" aria-label="Rückblick Aarauer Bierwanderung 2026">
+                            <img
+                                class="top-event-photo"
+                                src="assets/images/events/aarauer-bierwanderung-2026/foto.jpg"
+                                alt="LUMA Brauerei an der Aarauer Bierwanderung 2026"
+                                loading="eager"
+                            >
 
-                    <video
-                        class="top-event-video"
-                        controls
-                        playsinline
-                        preload="metadata"
-                        poster="assets/images/events/aarauer-bierwanderung-2026/video-poster.jpg"
-                        aria-label="Kurzer Video-Rückblick von unserem Stand an der Aarauer Bierwanderung 2026"
-                    >
-                        <source src="assets/videos/events/aarauer-bierwanderung-2026.mp4" type="video/mp4">
-                        Dein Browser unterstützt dieses Video nicht.
-                    </video>
-                </div>
+                            <video
+                                class="top-event-video"
+                                controls
+                                playsinline
+                                preload="metadata"
+                                poster="assets/images/events/aarauer-bierwanderung-2026/video-poster.jpg"
+                                aria-label="Kurzer Video-Rückblick von unserem Stand an der Aarauer Bierwanderung 2026"
+                            >
+                                <source src="assets/videos/events/aarauer-bierwanderung-2026.mp4" type="video/mp4">
+                                Dein Browser unterstützt dieses Video nicht.
+                            </video>
+                        </div>
 
-                <div class="top-event-content">
-                    <p class="eyebrow">Rückblick</p>
+                        <div class="top-event-content">
+                            <p class="eyebrow">Aktuelles · Rückblick</p>
+                            <h2>Danke für euren Besuch an der Aarauer Bierwanderung</h2>
+                            <p>
+                                Vielen Dank an alle, die am 15. August bei uns an der Friedenslinde
+                                vorbeigeschaut, mit uns angestossen und unsere Biere probiert haben.
+                                Es war ein grossartiger Tag – hier ein kleiner Rückblick.
+                            </p>
 
-                    <h2>Danke für euren Besuch an der Aarauer Bierwanderung</h2>
-
-                    <p>
-                        Vielen Dank an alle, die am 15. August bei uns an der Friedenslinde
-                        vorbeigeschaut, mit uns angestossen und unsere Biere probiert haben.
-                        Es war ein grossartiger Tag – hier ein kleiner Rückblick.
-                    </p>
-
-                    <div class="current-event-facts">
-                        <span>15. August 2026</span>
-                        <span>Aarauer Bierwanderung</span>
-                        <span>Friedenslinde</span>
+                            <div class="current-event-facts">
+                                <span>15. August 2026</span>
+                                <span>Aarauer Bierwanderung</span>
+                                <span>Friedenslinde</span>
+                            </div>
+                        </div>
                     </div>
+                </article>
+
+                <article class="current-slide" data-current-slide="1" aria-hidden="true">
+                    <div class="top-event-inner top-event-press">
+                        <div class="top-event-press-image">
+                            <img
+                                src="assets/images/about/lukas-manuel.webp"
+                                alt="Lukas und Manuel von der LUMA Brauerei vor der Brauanlage"
+                                loading="eager"
+                            >
+                        </div>
+
+                        <div class="top-event-content">
+                            <p class="eyebrow">Aktuelles · Presse</p>
+                            <h2>LUMA in der Aargauer Zeitung</h2>
+                            <p>
+                                Die Aargauer Zeitung berichtet über die kleine Brauereiszene rund um Aarau
+                                und über die nächsten Schritte von LUMA: die Zusammenarbeit mit Rabenbräu
+                                aus Gränichen und den geplanten Umzug des Braubetriebs nach Aarau Rohr.
+                            </p>
+                            <div class="current-event-facts">
+                                <span>3. Oktober 2026</span>
+                                <span>Aargauer Zeitung</span>
+                                <span>Region Aarau</span>
+                            </div>
+                            <div class="current-slide-actions">
+                                <a class="btn btn-primary" href="/presse/">Mehr zum Bericht</a>
+                                <a
+                                    class="btn btn-secondary"
+                                    href="https://www.aargauerzeitung.ch/aargau/aarau/region-aarau-kleine-brauereien-praegen-die-lokale-bierkultur-ld.4244497"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >Originalartikel</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="current-slider-controls" aria-label="Aktuelles auswählen">
+                    <button class="current-slider-arrow" id="prevCurrent" type="button" aria-label="Vorherige Meldung">‹</button>
+                    <div class="current-slider-dots" id="currentDots">
+                        <button class="active" type="button" aria-label="Aarauer Bierwanderung anzeigen" data-current-dot="0"></button>
+                        <button type="button" aria-label="Pressebericht anzeigen" data-current-dot="1"></button>
+                    </div>
+                    <button class="current-slider-arrow" id="nextCurrent" type="button" aria-label="Nächste Meldung">›</button>
                 </div>
             </div>
         </section>
@@ -359,11 +406,11 @@
         <section id="presse" class="section press-section">
             <div class="section-head">
                 <p class="eyebrow">Presse</p>
-                <h2>LUMA in der Aargauer Zeitung</h2>
+                <h2>Wie LUMA regional weiterwächst</h2>
                 <p>
-                    Die Aargauer Zeitung berichtet über kleine Brauereien in der Region Aarau
-                    und stellt dabei auch die LUMA Brauerei vor. Auf unserer Presseseite
-                    erzählen wir mehr über den Hintergrund und verlinken den Originalbeitrag.
+                    Die Aargauer Zeitung hat die Entwicklung kleiner Brauereien rund um Aarau aufgegriffen
+                    und dabei auch über LUMA berichtet. Im Mittelpunkt stehen unser nächster Entwicklungsschritt,
+                    die Zusammenarbeit mit Rabenbräu aus Gränichen und der geplante Umzug nach Aarau Rohr.
                 </p>
             </div>
 
@@ -377,20 +424,22 @@
                 </div>
 
                 <div class="press-feature-content">
-                    <p class="eyebrow">Aargauer Zeitung</p>
+                    <p class="eyebrow">Aargauer Zeitung · 3. Oktober 2026</p>
                     <h3>«Diese Brauer wollen regional Fuss fassen»</h3>
                     <p>
-                        Der Beitrag beleuchtet die regionale Bierkultur rund um Aarau und
-                        erwähnt LUMA als eine der kleinen Brauereien aus der Region.
+                        Der Bericht zeigt, wie sich die lokale Bierlandschaft entwickelt und welche Rolle kleine
+                        Brauereien dabei spielen. Für LUMA geht es um den Schritt vom gewachsenen Craft-Beer-Projekt
+                        zu einem stärker regional verankerten Braubetrieb – gemeinsam mit Rabenbräu und mit neuer
+                        Perspektive in Aarau Rohr.
                     </p>
                     <div class="press-actions">
-                        <a class="btn btn-primary" href="/presse/">Mehr zur Presseerwähnung</a>
+                        <a class="btn btn-primary" href="/presse/">Hintergrund & Einordnung</a>
                         <a
                             class="btn btn-secondary"
                             href="https://www.aargauerzeitung.ch/aargau/aarau/region-aarau-kleine-brauereien-praegen-die-lokale-bierkultur-ld.4244497"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Originalartikel öffnen</a>
+                        >Artikel bei der AZ lesen</a>
                     </div>
                 </div>
             </article>
@@ -529,6 +578,6 @@
             <a href="https://untappd.com/w/luma-brauerei/602341/beer" target="_blank" rel="noopener">Untappd</a>
         </div>
     </footer>
-    <script src="assets/js/main.js?v=2" defer></script>
+    <script src="assets/js/main.js?v=3" defer></script>
 </body>
 </html>

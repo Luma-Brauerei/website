@@ -16,3 +16,10 @@ Statische Website für https://luma-brauerei.ch/.
 ## Veröffentlichung
 
 Den Inhalt dieses Ordners in das Root-Verzeichnis des bestehenden GitHub-Pages-Repositories kopieren bzw. die vorhandenen Dateien ersetzen. `CNAME` muss bestehen bleiben.
+
+
+## Update 06.10.2026
+
+- wechselnder Aktuelles-Hero für Bierwanderung und Pressebericht
+- Navigation beginnt mit Aktuelles
+- Pressebericht inhaltlich erweitert und neu eingeordnet

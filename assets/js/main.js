@@ -171,3 +171,67 @@ document.addEventListener("keydown", (event) => {
 createDots();
 renderBeer(currentBeerIndex);
 startAutoSlide();
+
+
+/* Aktuelles-Slider */
+const currentSlides = Array.from(document.querySelectorAll("[data-current-slide]"));
+const currentDots = Array.from(document.querySelectorAll("[data-current-dot]"));
+const prevCurrent = document.getElementById("prevCurrent");
+const nextCurrent = document.getElementById("nextCurrent");
+const currentSlider = document.getElementById("currentSlider");
+let currentSlideIndex = 0;
+let currentSlideTimer = null;
+
+function renderCurrentSlide(index) {
+    if (!currentSlides.length) return;
+
+    currentSlideIndex = (index + currentSlides.length) % currentSlides.length;
+
+    currentSlides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === currentSlideIndex;
+        slide.classList.toggle("active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+
+        if (!isActive) {
+            slide.querySelectorAll("video").forEach((video) => video.pause());
+        }
+    });
+
+    currentDots.forEach((dot, dotIndex) => {
+        dot.classList.toggle("active", dotIndex === currentSlideIndex);
+        dot.setAttribute("aria-current", dotIndex === currentSlideIndex ? "true" : "false");
+    });
+}
+
+function startCurrentSlider() {
+    if (currentSlides.length < 2) return;
+    currentSlideTimer = window.setInterval(() => renderCurrentSlide(currentSlideIndex + 1), 9000);
+}
+
+function restartCurrentSlider() {
+    if (currentSlideTimer) window.clearInterval(currentSlideTimer);
+    startCurrentSlider();
+}
+
+function goToCurrentSlide(index) {
+    renderCurrentSlide(index);
+    restartCurrentSlider();
+}
+
+prevCurrent?.addEventListener("click", () => goToCurrentSlide(currentSlideIndex - 1));
+nextCurrent?.addEventListener("click", () => goToCurrentSlide(currentSlideIndex + 1));
+currentDots.forEach((dot) => {
+    dot.addEventListener("click", () => goToCurrentSlide(Number(dot.dataset.currentDot || 0)));
+});
+
+currentSlider?.addEventListener("mouseenter", () => {
+    if (currentSlideTimer) window.clearInterval(currentSlideTimer);
+});
+currentSlider?.addEventListener("mouseleave", restartCurrentSlider);
+currentSlider?.addEventListener("focusin", () => {
+    if (currentSlideTimer) window.clearInterval(currentSlideTimer);
+});
+currentSlider?.addEventListener("focusout", restartCurrentSlider);
+
+renderCurrentSlide(0);
+startCurrentSlider();
