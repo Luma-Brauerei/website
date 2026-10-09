@@ -205,7 +205,7 @@ function renderCurrentSlide(index) {
 
 function startCurrentSlider() {
     if (currentSlides.length < 2) return;
-    currentSlideTimer = window.setInterval(() => renderCurrentSlide(currentSlideIndex + 1), 9000);
+    currentSlideTimer = window.setInterval(() => renderCurrentSlide(currentSlideIndex + 1), 8000);
 }
 
 function restartCurrentSlider() {

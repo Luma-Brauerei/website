@@ -2,24 +2,16 @@
 
 Statische Website für https://luma-brauerei.ch/.
 
-## Neu in dieser Version
+## Stand 09.10.2026
 
-- eigener Pressebereich auf der Startseite
-- neue indexierbare Seite `/presse/`
-- Verlinkung zum Originalartikel der Aargauer Zeitung
-- aktualisierte `sitemap.xml`
-- Organization-Structured-Data (JSON-LD)
-- Open-Graph-Metadaten für die Presseseite
-- interne Verlinkung zwischen Startseite und Presseseite
-- optimierte WebP-Versionen der grossen About- und Bierbilder
-
-## Veröffentlichung
-
-Den Inhalt dieses Ordners in das Root-Verzeichnis des bestehenden GitHub-Pages-Repositories kopieren bzw. die vorhandenen Dateien ersetzen. `CNAME` muss bestehen bleiben.
-
-
-## Update 06.10.2026
-
-- wechselnder Aktuelles-Hero für Bierwanderung und Pressebericht
-- Navigation beginnt mit Aktuelles
-- Pressebericht inhaltlich erweitert und neu eingeordnet
+- Aktuelles-Slider mit drei Meldungen:
+  1. neues 400-Liter-Doppelsudhaus
+  2. Aargauer-Zeitung-Bericht
+  3. Aarauer Bierwanderung
+- automatische Umschaltung alle 8 Sekunden
+- neue Seite `/brauerei/neue-anlage/`
+- vier eigene Produktionsbilder für den Anlagenbeitrag optimiert
+- Pressebereiche ohne wiederholtes Gründerfoto
+- Gründerfoto nur noch im Abschnitt „Lukas und Manuel“
+- Presse-CTA vereinfacht
+- Sitemap um die neue Anlagen-Seite erweitert

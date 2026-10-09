@@ -1426,3 +1426,262 @@ body.modal-open {overflow:hidden;}
         width: 100%;
     }
 }
+
+
+/* ==========================================================
+   Aktuelles: neues Sudhaus + Presse ohne Gründerfoto
+   ========================================================== */
+
+.top-event-brewery {
+    grid-template-columns: minmax(380px, .95fr) minmax(0, 1.05fr);
+    gap: 40px;
+}
+
+.top-event-brewery-image {
+    overflow: hidden;
+    min-height: 360px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: #151922;
+}
+
+.top-event-brewery-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.press-mark-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 330px;
+    padding: 36px;
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(141,255,120,.14), transparent 28%),
+        linear-gradient(145deg, #171d27, #252d3a);
+    box-shadow: var(--shadow);
+}
+
+.press-mark-card strong {
+    display: block;
+    max-width: 500px;
+    margin: 8px 0 16px;
+    color: var(--text);
+    font-size: clamp(2.2rem, 5vw, 4.7rem);
+    line-height: .95;
+    letter-spacing: -.055em;
+}
+
+.press-mark-card > span:last-child,
+.press-mark-card > span:nth-last-child(2) {
+    color: var(--muted);
+}
+
+.press-mark-kicker {
+    color: var(--green);
+    font-size: .82rem;
+    font-weight: 900;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.press-mark-card-slider {
+    min-height: 360px;
+}
+
+.press-feature-media {
+    display: flex;
+}
+
+.press-feature-media .press-mark-card {
+    width: 100%;
+    min-height: 100%;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.press-mark-card-page {
+    min-height: 430px;
+}
+
+
+/* ==========================================================
+   Neue 400-Liter-Brauanlage
+   ========================================================== */
+
+.brewery-build-hero {
+    padding: 72px 7vw;
+    background:
+        radial-gradient(circle at top left, rgba(141,255,120,.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,211,78,.08), transparent 28%),
+        var(--bg-soft);
+    border-bottom: 1px solid var(--border);
+}
+
+.brewery-build-hero-inner,
+.brewery-build-story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+    gap: 48px;
+    align-items: center;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.brewery-build-copy h1 {
+    margin-bottom: 22px;
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    line-height: .98;
+    letter-spacing: -.055em;
+}
+
+.brewery-build-copy > p:not(.eyebrow) {
+    max-width: 760px;
+    margin-bottom: 26px;
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.brewery-build-facts {
+    margin: 0 0 28px;
+}
+
+.brewery-build-hero-image,
+.brewery-build-image {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+}
+
+.brewery-build-hero-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.brewery-build-story-grid article h2 {
+    margin-bottom: 22px;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -.045em;
+}
+
+.brewery-build-story-grid article p {
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 1.04rem;
+}
+
+.brewery-build-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.brewery-build-cards .card h3 {
+    margin-bottom: 12px;
+}
+
+.brewery-build-gallery {
+    display: grid;
+    grid-template-columns: 1.3fr .85fr .85fr;
+    gap: 18px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.brewery-build-gallery figure {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: var(--card);
+}
+
+.brewery-build-gallery img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.brewery-build-gallery-main img {
+    height: 420px;
+}
+
+.brewery-build-gallery figcaption {
+    padding: 14px 16px 16px;
+    color: var(--muted);
+    font-size: .92rem;
+}
+
+.brewery-build-next .hero-buttons {
+    max-width: 1180px;
+    margin: 26px auto 0;
+}
+
+@media (max-width: 920px) {
+    .top-event-brewery,
+    .brewery-build-hero-inner,
+    .brewery-build-story-grid,
+    .brewery-build-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .top-event-brewery-image,
+    .press-mark-card-slider {
+        min-height: 300px;
+    }
+
+    .press-mark-card-page {
+        min-height: 320px;
+    }
+
+    .brewery-build-hero-image {
+        max-width: 760px;
+    }
+
+    .brewery-build-hero-image img {
+        aspect-ratio: 16 / 10;
+    }
+
+    .brewery-build-gallery {
+        max-width: 760px;
+    }
+
+    .brewery-build-gallery img,
+    .brewery-build-gallery-main img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+}
+
+@media (max-width: 560px) {
+    .press-mark-card {
+        min-height: 250px;
+        padding: 24px;
+    }
+
+    .press-mark-card strong {
+        font-size: clamp(2rem, 12vw, 3.2rem);
+    }
+
+    .brewery-build-hero {
+        padding: 46px 18px;
+    }
+
+    .top-event-brewery-image img {
+        min-height: 260px;
+    }
+}
