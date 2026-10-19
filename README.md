@@ -15,3 +15,8 @@ Statische Website für https://luma-brauerei.ch/.
 - Gründerfoto nur noch im Abschnitt „Lukas und Manuel“
 - Presse-CTA vereinfacht
 - Sitemap um die neue Anlagen-Seite erweitert
+
+## Ergänzung 19.10.2026
+- Basqueland-Story um Brauereidaten, Etiketten und persönliche Empfehlung erweitert (Angaben aus Besuch).
+- Friends-of-LUMA-Texte ohne implizierte Zusammenarbeit mit Basqueland.
+- Externe Links zu Rabenbräu und Basqueland ergänzt.
