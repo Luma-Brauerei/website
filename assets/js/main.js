@@ -240,7 +240,7 @@ startCurrentSlider();
 (function () {
  const controls = document.querySelectorAll('[data-lang]');
  const elements = Array.from(document.querySelectorAll('[data-en]'));
- elements.forEach(el => { el.dataset.de = el.textContent.trim(); });
+ elements.forEach(el => { if (!el.dataset.de) el.dataset.de = el.textContent.trim(); });
  const dynamic = {
   'Klassisch':'Classic','Malzig':'Malty','Modern':'Modern','Fruchtig':'Fruity',
   'Süffig, klar und ausgewogen. Ein unkompliziertes Bier für fast jeden Anlass.':'Smooth, clear and balanced. An easy-drinking beer for almost any occasion.',
@@ -254,8 +254,17 @@ startCurrentSlider();
   document.documentElement.lang = lang === 'en' ? 'en' : 'de-CH';
   elements.forEach(el => {el.textContent = lang === 'en' ? el.dataset.en : el.dataset.de;});
   controls.forEach(b => { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
-  document.title = lang === 'en' ? 'LUMA Brewery Aarau – Craft Beer & Beer for Events' : 'LUMA Brauerei Aarau – Craft Beer & Bier für Feste';
-  document.querySelector('meta[name="description"]')?.setAttribute('content', lang === 'en' ? 'LUMA craft brewery in Aarau: independently brewed Helles, Brown Ale, IPAs and kegs for events.' : 'LUMA Brauerei in Aarau: handwerklich gebrautes Craft Beer, Helles, Brown Ale, IPAs, Kegs und Ausschanklösungen für Feste und Events.');
+  const pageTitle = document.querySelector('title');
+  if (pageTitle) {
+   if (!pageTitle.dataset.de) pageTitle.dataset.de = pageTitle.textContent;
+   document.title = lang === 'en' ? (pageTitle.dataset.en || 'LUMA Brewery Aarau – Craft Beer & Beer for Events') : pageTitle.dataset.de;
+  }
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta) {
+   if (!meta.dataset.de) meta.dataset.de = meta.content;
+   if (!meta.dataset.en) meta.dataset.en = 'LUMA craft brewery: beer, brewing stories and news from Aarau.';
+   meta.content = lang === 'en' ? meta.dataset.en : meta.dataset.de;
+  }
   if (typeof renderBeer === 'function') renderBeer(currentBeerIndex);
   try { localStorage.setItem('luma-language',lang); } catch(e) {}
  }
@@ -263,4 +272,5 @@ startCurrentSlider();
  try {applyLanguage(localStorage.getItem('luma-language') || 'de');} catch(e) {applyLanguage('de');}
  window.lumaLanguage = () => lang;
  window.lumaTranslateDynamic = text => lang === 'en' ? (dynamic[text] || text) : text;
+ if (typeof renderBeer === 'function') renderBeer(currentBeerIndex);
 })();

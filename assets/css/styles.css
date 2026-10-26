@@ -1706,3 +1706,6 @@ body.modal-open {overflow:hidden;}
 .basqueland-gallery figure.gallery-wide{grid-column:span 2}.basqueland-gallery figure.gallery-wide img{height:400px;object-position:center 45%}
 .basqueland-gallery figcaption{padding:12px 18px;color:var(--muted);font-size:.92rem}
 @media(max-width:760px){.friends-grid,.top-event-basqueland,.basqueland-gallery{grid-template-columns:1fr}.basqueland-gallery figure.gallery-wide{grid-column:span 1}.basqueland-gallery figure.gallery-wide img{height:260px}.basqueland-feature-photo{min-height:220px;height:240px}.language-switch{margin:0 4px}.friend-logo{height:170px}}
+
+/* Three Friends of LUMA cards */
+@media(min-width:900px){.friends-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
